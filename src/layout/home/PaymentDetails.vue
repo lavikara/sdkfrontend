@@ -1,10 +1,7 @@
 <template>
   <div id="overview">
     <Teleport to="#teleport-modal">
-      <SmallModal
-        v-if="showEmailPopup"
-        @close="showEmailPopup = !showEmailPopup"
-      >
+      <SmallModal v-if="showEmailPopup" @close="reload">
         <template v-slot:content>
           <img
             class="tw-w-44 tw-mx-auto"
@@ -56,10 +53,11 @@
                 Enter your card details
               </h3>
               <NumberInput
-                placeHolder="Card Number"
+                placeHolder="0000 0000 0000 0000"
                 label="card number"
                 type="text"
                 fieldType="tokenAmount"
+                :showLabel="true"
                 name="card number"
                 id="cardNumber"
                 @set="setCardNumber"
@@ -68,19 +66,21 @@
                 class="tw-w-full tw-flex tw-justify-between tw-items-center tw-gap-4 tw-mt-4"
               >
                 <NumberInput
-                  placeHolder="Card Expiry"
+                  placeHolder="MM/YY"
                   label="card expiry"
                   type="text"
                   fieldType="cardExpiry"
+                  :showLabel="true"
                   name="card expiry"
                   id="cardExpiry"
                   @set="setCardExpiryNumber"
                 />
                 <NumberInput
-                  placeHolder="CVV"
+                  placeHolder="123"
                   label="cvv"
                   type="text"
                   fieldType="cvv"
+                  :showLabel="true"
                   name="cvv"
                   id="cvv"
                   @set="setCvvNumber"
@@ -158,6 +158,10 @@ export default {
     setCvvNumber() {},
 
     setCardExpiryNumber() {},
+
+    reload() {
+      location.reload();
+    },
 
     setEmail(email) {
       this.payload.email = email;

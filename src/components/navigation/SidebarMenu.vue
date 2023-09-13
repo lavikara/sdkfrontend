@@ -4,7 +4,6 @@
       <router-link
         :to="href"
         class="tw-flex tw-py-5 tw-cursor-pointer hover:tw-text-primary"
-        :class="[focus === true ? 'tw-text-primary' : 'tw-text-gray']"
       >
         <span class="tw-pl-5">
           {{ title }}
