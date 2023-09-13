@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
-const DashboardView = () => import("@/views/DashboardView.vue");
+const HomeView = () => import("@/views/HomeView.vue");
 
 const routes = [
   {
     path: "",
-    name: "DashboardView",
-    component: DashboardView,
+    name: "HomeView",
+    component: HomeView,
     children: [
       {
         path: "",
-        name: "DefaultOverview",
-        redirect: { name: "OverviewDetails" },
+        name: "DefaultPaymentDetails",
+        redirect: { name: "PaymentDetails" },
       },
       {
-        path: "paymentdetails",
-        name: "OverviewDetails",
+        path: "paymentdetails/:id",
+        name: "PaymentDetails",
         component: () =>
           import(
             /* webpackChunkName: "dashboard" */
-            "@/layout/overview/OverviewDetails.vue"
+            "@/layout/home/PaymentDetails.vue"
           ),
       },
     ],

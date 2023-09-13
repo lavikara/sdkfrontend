@@ -18,13 +18,9 @@
       }"
       :disabled="loading || disabled"
     >
-      <img
-        v-if="title === 'Fund Wallet'"
-        class="tw-hidden sm:tw-block tw-mr-2"
-        src="@/assets/img/plus-icon.svg"
-        alt="plus"
-      />
-      <span v-show="!loading">{{ title }}</span>
+      <span v-show="!loading"
+        >{{ title }} {{ formatCurrency(amount, 2, "NGN") }}</span
+      >
       <img
         v-show="loading"
         class="tw-m-auto"
@@ -36,6 +32,7 @@
 </template>
 
 <script>
+import { formatCurrency } from "@/utils/helpers.js";
 export default {
   name: "OnboardingBtn",
 
@@ -43,9 +40,14 @@ export default {
 
   props: {
     title: { type: String, default: () => "", required: true },
+    amount: { type: String, default: () => "", required: true },
     loading: { type: Boolean, default: () => false },
     disabled: { type: Boolean, default: () => false },
     bgColour: { type: String, default: () => "" },
+  },
+
+  methods: {
+    formatCurrency,
   },
 };
 </script>

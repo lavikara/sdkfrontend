@@ -8,7 +8,6 @@
     "uqudo": "vue-cli-service serve --port 4200"
   },
   "dependencies": {
-    "@bugsnag/js": "^7.16.2",
     "@bugsnag/plugin-vue": "^7.16.2",
     "@fluidcoins/pay.js": "^0.1.14",
     "@mono.co/connect.js": "^0.2.2",

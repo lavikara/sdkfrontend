@@ -14,7 +14,7 @@ exports.isNumber = (evt) => {
 };
 
 /* This function is used to format a number to a currency format. */
-exports.formatAmountToDollar = (amount, decimal, currency) => {
+exports.formatCurrency = (amount, decimal, currency) => {
   if (amount === undefined) return;
   const value = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -22,104 +22,6 @@ exports.formatAmountToDollar = (amount, decimal, currency) => {
     minimumFractionDigits: decimal,
   });
   return value.format(amount);
-};
-
-/* A function that takes a date as an argument and returns a string in the format of dd-mm-yyyy */
-exports.formatISODate = (date) => {
-  if (!date) return "";
-  let currentdate = new Date(date);
-
-  let datetime =
-    currentdate.getDate() +
-    "/" +
-    (currentdate.getMonth() + 1) +
-    "/" +
-    currentdate.getFullYear();
-
-  return datetime;
-};
-
-exports.formatToStringDate = (date, hideDay) => {
-  if (!date) return "";
-  let datetime = "";
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let currentdate = new Date(date);
-  if (hideDay) {
-    datetime =
-      currentdate.getDate() +
-      " " +
-      months[currentdate.getMonth()] +
-      ", " +
-      currentdate.getFullYear();
-  } else {
-    datetime =
-      days[currentdate.getDay()] +
-      ", " +
-      currentdate.getDate() +
-      " " +
-      months[currentdate.getMonth()] +
-      " " +
-      currentdate.getFullYear();
-  }
-
-  return datetime;
-};
-
-/* This function takes a date as an argument and returns a string in the format of `hh:mm:ss` */
-exports.formatISOTime = (date) => {
-  return new Date(date).toLocaleString("en-US").split(",")[1];
-};
-
-/* This function takes a time in milliseconds and returns a string in the format of `day : hour : min :
-seconds` */
-exports.milliSecondsToDayHourMin = (timeRemaining) => {
-  let dayInMilliseconds = 86400000;
-  let hourInMilliseconds = 3600000;
-  let day = Math.floor(timeRemaining / dayInMilliseconds);
-  let hour = Math.floor(
-    (timeRemaining - day * dayInMilliseconds) / hourInMilliseconds
-  );
-  let min = Math.round(
-    (timeRemaining - day * dayInMilliseconds - hour * hourInMilliseconds) /
-      60000
-  );
-  let seconds = Math.round(timeRemaining - min / 60);
-  const pad = function (num) {
-    return num < 10 ? "0" + num : num;
-  };
-  if (min === 60) {
-    hour++;
-    min = 0;
-  }
-  if (hour === 24) {
-    day++;
-    hour = 0;
-  }
-  return `${day} : ${pad(hour)}  :  ${pad(min)}:  ${pad(seconds)}`;
-};
-
-/* This function takes a time in milliseconds and returns a string in the format of `day : hour : min :
-seconds` */
-exports.calculateDay = (time) => {
-  let timeToMilliseconds = new Date(time).getTime();
-  let currentTime = Date.now();
-  let ellapsedTime = currentTime - timeToMilliseconds;
-  const days = Math.floor(ellapsedTime / (1000 * 60 * 60 * 24));
-  return days;
 };
 
 /* This function takes a time in milliseconds and returns a string in the format of `day : hour : min :

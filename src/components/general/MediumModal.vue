@@ -12,7 +12,7 @@
           alt="close icon"
           @click="$emit('close')"
         />
-        <div class="slot tw-px-4 tw-py-8 sm:tw-p-12">
+        <div class="slot tw-p-4">
           <slot name="content">content</slot>
         </div>
       </div>
@@ -38,7 +38,7 @@ export default {
 
   .container {
     .card {
-      max-width: 530px;
+      max-width: 430px;
       margin: 7rem auto 0 auto;
 
       .close-btn {
