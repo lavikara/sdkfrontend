@@ -6,42 +6,16 @@
       <nav>
         <p>Pay With</p>
         <div>
-          <SidebarMenu
-            title="Card"
-            href="/dashboard/overview"
-            :focus="
-              overviewFocus || $route.path.includes('/dashboard/overview')
-            "
-          />
+          <SidebarMenu title="Card" />
         </div>
         <div>
-          <SidebarMenu
-            title="Bank"
-            href="/dashboard/trade/Now Raising"
-            :focus="
-              tradeFocus ||
-              $route.path.includes('/dashboard/trade') ||
-              $route.path.includes('investor-report')
-            "
-          />
+          <SidebarMenu title="Bank" />
         </div>
         <div>
-          <SidebarMenu
-            title="Transfer"
-            href="/dashboard/employee-stocks"
-            :focus="
-              stockFocus || $route.path.includes('/dashboard/employee-stocks')
-            "
-          />
+          <SidebarMenu title="Transfer" />
         </div>
         <div>
-          <SidebarMenu
-            title="USSD"
-            href="/dashboard/gift-equity"
-            :focus="
-              giftEquityFocus || $route.path.includes('/dashboard/gift-equity')
-            "
-          />
+          <SidebarMenu title="USSD" />
         </div>
       </nav>
     </div>
@@ -50,7 +24,6 @@
 
 <script>
 import SidebarMenu from "@/components/navigation/SidebarMenu.vue";
-import { mapGetters, mapState, mapActions } from "vuex";
 
 export default {
   name: "Sidebar",
@@ -58,91 +31,14 @@ export default {
   components: { SidebarMenu },
 
   data() {
-    return {
-      overviewFocus: false,
-      giftEquityFocus: false,
-      transactionsFocus: false,
-      walletFocus: false,
-      tradeFocus: false,
-      dealRoomFocus: false,
-      accountFocus: false,
-      stockFocus: false,
-    };
+    return {};
   },
 
-  created() {
-    this.setFocus(this.$route.name);
-    if (
-      this.$route.name === "OverviewDetails" ||
-      this.$route.name === "EsopOverview"
-    ) {
-      return;
-    }
-    this.getUserEsop();
-  },
+  created() {},
 
-  computed: {
-    ...mapGetters("esopModule", ["esops"]),
-  },
+  computed: {},
 
-  methods: {
-    ...mapActions(["updateWelcomeModal"]),
-    ...mapActions("esopModule", ["getUserEsop"]),
-
-    setFocus(route) {
-      this.overviewFocus = false;
-      this.giftEquityFocus = false;
-      this.transactionsFocus = false;
-      this.walletFocus = false;
-      this.tradeFocus = false;
-      this.dealRoomFocus = false;
-      this.accountFocus = false;
-      this.stockFocus = false;
-      switch (route) {
-        case "OverviewDetails":
-          this.overviewFocus = true;
-          break;
-        case "GiftEquity":
-          this.giftEquityFocus = true;
-          break;
-        case route.includes("Trade"):
-          this.tradeFocus = true;
-          break;
-        case route.includes("employee-stocks"):
-          this.stockFocus = true;
-          break;
-        case "dealRoom":
-          this.dealRoomFocus = true;
-          break;
-        case "Transactions":
-          this.transactionsFocus = true;
-          break;
-        case "Wallet":
-          this.walletFocus = true;
-          break;
-        case route.includes("Account"):
-          this.accountFocus = true;
-          break;
-      }
-    },
-
-    startTour() {
-      this.$router.push({ name: "OverviewDetails" });
-      setTimeout(() => {
-        this.updateWelcomeModal(true);
-      }, 500);
-    },
-  },
-
-  watch: {
-    $route(to, from) {
-      deep: true;
-      immediate: true;
-      if (to !== from) {
-        this.setFocus(this.$route.name);
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 

@@ -52,7 +52,7 @@
                   <p>{{ paymentDetails.email }}</p>
                 </div>
               </div>
-              <h3 class="tw-text-center tw-text-xl tw-mb-8">
+              <h3 class="tw-text-center tw-text-xl tw-mb-4">
                 Enter your card details
               </h3>
               <NumberInput
