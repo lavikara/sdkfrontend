@@ -3,7 +3,7 @@
     <Teleport to="#teleport-modal">
       <SmallModal v-if="showEmailPopup" @close="reload">
         <template v-slot:content>
-          <form @submit.prevent="">
+          <form @submit.prevent="updateEmail">
             <img
               class="tw-w-44 tw-mx-auto"
               src="@/assets/img/woodcore.png"
@@ -59,7 +59,7 @@
                 <NumberInput
                   placeHolder="0000 0000 0000 0000"
                   label="card number"
-                  type="text"
+                  type="number"
                   fieldType="tokenAmount"
                   :showLabel="true"
                   name="card number"
@@ -72,7 +72,7 @@
                   <NumberInput
                     placeHolder="MM/YY"
                     label="card expiry"
-                    type="text"
+                    type="number"
                     fieldType="cardExpiry"
                     :showLabel="true"
                     name="card expiry"
@@ -82,7 +82,7 @@
                   <NumberInput
                     placeHolder="123"
                     label="cvv"
-                    type="text"
+                    type="number"
                     fieldType="cvv"
                     :showLabel="true"
                     name="cvv"
@@ -164,7 +164,9 @@ export default {
 
     pay() {},
 
-    setCardNumber() {},
+    setCardNumber(value) {
+      console.log(value);
+    },
 
     setCvvNumber() {},
 
