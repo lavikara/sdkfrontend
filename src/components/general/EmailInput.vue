@@ -14,7 +14,7 @@
       :disabled="disabled"
       required
     />
-    <p class="tw-absolute tw--top-4 tw-right-px tw-text-error tw-text-xs">
+    <p class="tw-absolute tw--bottom-4 tw-right-0 tw-text-error tw-text-xs">
       {{ errorMsg }}
     </p>
   </div>

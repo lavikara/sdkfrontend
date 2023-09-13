@@ -19,6 +19,7 @@ exports.formatCurrency = (amount, decimal, currency) => {
   const value = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,
+    currencyDisplay: "narrowSymbol",
     minimumFractionDigits: decimal,
   });
   return value.format(amount);
