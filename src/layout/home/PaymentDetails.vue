@@ -1,7 +1,7 @@
 <template>
   <div id="overview">
     <Teleport to="#teleport-modal">
-      <SmallModal v-if="showEmailPopup" @close="reload">
+      <SmallModal v-if="showEmailPopup" @close="removeIframe">
         <template v-slot:content>
           <form @submit.prevent="updateEmail">
             <img
@@ -164,13 +164,16 @@ export default {
 
     pay() {},
 
-    setCardNumber(value) {
-      console.log(value);
-    },
+    setCardNumber() {},
 
     setCvvNumber() {},
 
     setCardExpiryNumber() {},
+
+    removeIframe() {
+      let elem = document.querySelector("#woodcore--frame-id");
+      elem.parentNode.removeChild(elem);
+    },
 
     reload() {
       location.reload();
