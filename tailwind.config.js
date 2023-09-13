@@ -1,13 +1,15 @@
 module.exports = {
   mode: "jit",
-  // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-  enabled: process.env.NODE_ENV === "production",
-  content: [
-    "./public/index.html",
-    "./src/**/*.html",
-    "./src/**/*.vue",
-    "./src/styles/**/*.css",
-  ],
+  purge: {
+    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
+    enabled: process.env.NODE_ENV === "production",
+    content: [
+      "./public/index.html",
+      "./src/**/*.html",
+      "./src/**/*.vue",
+      "./src/styles/**/*.css",
+    ],
+  },
   darkMode: "class", // or 'media' or 'class'
   prefix: "tw-",
   theme: {
