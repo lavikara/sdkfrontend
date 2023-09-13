@@ -1,0 +1,39 @@
+{
+  "name": "getequity.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "uqudo": "vue-cli-service serve --port 4200"
+  },
+  "dependencies": {
+    "@bugsnag/js": "^7.16.2",
+    "@bugsnag/plugin-vue": "^7.16.2",
+    "@fluidcoins/pay.js": "^0.1.14",
+    "@mono.co/connect.js": "^0.2.2",
+    "@vuelidate/core": "^2.0.0-alpha.33",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
+    "axios": "^0.24.0",
+    "core-js": "^3.6.5",
+    "uqudosdk-web": "^3.1.2",
+    "vue": "^3.0.0",
+    "vue-flickity": "^1.2.1",
+    "vue-plaid-link2": "^0.2.1",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.14",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "sass": "^1.49.8",
+    "sass-loader": "^8.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+  }
+}

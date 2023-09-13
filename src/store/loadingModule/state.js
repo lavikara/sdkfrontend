@@ -1,0 +1,18 @@
+export default {
+  signinLoading: false,
+  signinSuccess: false,
+  createLoading: false,
+  createSuccess: false,
+  verifyLoading: false,
+  verifySuccess: false,
+  selfieLoading: false,
+  selfieSuccess: false,
+  createPinLoading: false,
+  createPinSuccess: false,
+  verifyPinLoading: false,
+  verifyPinSuccess: false,
+  requestLinkLoading: false,
+  requestLinkSuccess: false,
+  resetPasswordLoading: false,
+  resetPasswordSuccess: false,
+};

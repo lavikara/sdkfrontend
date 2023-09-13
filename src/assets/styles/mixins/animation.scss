@@ -1,0 +1,20 @@
+@mixin transition($time) {
+  transition: $time ease all;
+  -moz-transition: $time ease all;
+  -webkit-transition: $time ease all;
+}
+
+@mixin fadeIn {
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

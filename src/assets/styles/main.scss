@@ -1,0 +1,92 @@
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  color: $body-text;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #8791a7;
+  outline: none;
+  background: transparent;
+  resize: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="file"] {
+  opacity: 0;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s ease all;
+  &:disabled {
+    cursor: not-allowed;
+    // background-color: rgba(77, 132, 255, 0.5);
+  }
+  &:hover {
+    background-color: #375cb1;
+    color: #ffffff;
+  }
+}
+
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.3s cubic-bezier(0.45, 0.25, 0.6, 0.95);
+}
+
+.fade-transform-enter-to,
+.fade-transform-leave-from {
+  opacity: 1;
+}
+
+.fade-transform-enter-from,
+.fade-transform-leave-to {
+  opacity: 0.2;
+}
+
+.asset-info__datepicker {
+  border: 1px solid #dde1e9;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

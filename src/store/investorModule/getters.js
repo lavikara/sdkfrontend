@@ -1,0 +1,13 @@
+export const investorDetails = (state) => state.investorDetails;
+export const transactions = (state) => state.transactions;
+export const walletBalance = (state) => state.walletBalance;
+export const cashWalletBalance = (state) => state.cashWalletBalance;
+export const tradingWalletBalance = (state) => state.tradingWalletBalance;
+export const availableBalance = (state) => state.availableBalance;
+export const equitySalesBalance = (state) => state.equitySalesBalance;
+export const totalTransactions = (state) => state.totalTransactions;
+export const pages = (state) => state.pages;
+export const page = (state) => state.page;
+export const exchangeRate = (state) => state.exchangeRate;
+export const bankDetails = (state) => state.bankDetails;
+export const membershipStatus = (state) => state.membershipStatus;
