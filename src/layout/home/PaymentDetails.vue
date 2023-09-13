@@ -176,9 +176,7 @@ export default {
       location.reload();
     },
 
-    updateEmail() {
-      console.log("im here");
-    },
+    updateEmail() {},
 
     setEmail(email) {
       this.payload.email = email;
