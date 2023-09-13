@@ -34,52 +34,62 @@
     </Teleport>
     <Teleport to="#teleport-modal">
       <MediumModal
+        class=""
         v-if="showPaymentDetails"
         @close="showPaymentDetails = !showPaymentDetails"
       >
         <template v-slot:content>
-          <div class="tw-flex tw-justify-between tw-items-center tw-mb-12">
-            <img class="tw-w-10" src="@/assets/img/woodcore.png" alt="info" />
-            <div>
-              <p>{{ paymentDetails.email }}</p>
+          <div class="payment-details tw-flex">
+            <Sidebar />
+            <div class="tw-pl-4">
+              <div class="tw-flex tw-justify-between tw-items-center tw-mb-12">
+                <img
+                  class="tw-w-10"
+                  src="@/assets/img/woodcore.png"
+                  alt="info"
+                />
+                <div>
+                  <p>{{ paymentDetails.email }}</p>
+                </div>
+              </div>
+              <h3 class="tw-text-center tw-text-xl tw-mb-8">
+                Enter your card details
+              </h3>
+              <NumberInput
+                placeHolder="Card Number"
+                label="card number"
+                type="text"
+                fieldType="tokenAmount"
+                name="card number"
+                id="cardNumber"
+                @set="setCardNumber"
+              />
+              <div
+                class="tw-w-full tw-flex tw-justify-between tw-items-center tw-gap-4 tw-mt-4"
+              >
+                <NumberInput
+                  placeHolder="Card Expiry"
+                  label="card expiry"
+                  type="text"
+                  fieldType="cardExpiry"
+                  name="card expiry"
+                  id="cardExpiry"
+                  @set="setCardExpiryNumber"
+                />
+                <NumberInput
+                  placeHolder="CVV"
+                  label="cvv"
+                  type="text"
+                  fieldType="cvv"
+                  name="cvv"
+                  id="cvv"
+                  @set="setCvvNumber"
+                />
+              </div>
+              <div class="tw-flex tw-gap-8 tw-mt-12">
+                <Btn title="Pay" :amount="paymentDetails.amount" @click="pay" />
+              </div>
             </div>
-          </div>
-          <h3 class="tw-text-center tw-text-xl tw-mb-8">
-            Enter your card details
-          </h3>
-          <NumberInput
-            placeHolder="Card Number"
-            label="card number"
-            type="text"
-            fieldType="tokenAmount"
-            name="card number"
-            id="cardNumber"
-            @set="setCardNumber"
-          />
-          <div
-            class="tw-w-full tw-flex tw-justify-between tw-items-center tw-gap-4 tw-mt-4"
-          >
-            <NumberInput
-              placeHolder="Card Expiry"
-              label="card expiry"
-              type="text"
-              fieldType="cardExpiry"
-              name="card expiry"
-              id="cardExpiry"
-              @set="setCardExpiryNumber"
-            />
-            <NumberInput
-              placeHolder="CVV"
-              label="cvv"
-              type="text"
-              fieldType="cvv"
-              name="cvv"
-              id="cvv"
-              @set="setCvvNumber"
-            />
-          </div>
-          <div class="tw-flex tw-gap-8 tw-mt-12">
-            <Btn title="Pay" :amount="paymentDetails.amount" @click="pay" />
           </div>
         </template>
       </MediumModal>
@@ -96,6 +106,7 @@ import NumberInput from "@/components/general/NumberInput.vue";
 import Btn from "@/components/general/BtnComponent.vue";
 import SmallModal from "@/components/general/SmallModal.vue";
 import MediumModal from "@/components/general/MediumModal.vue";
+import Sidebar from "@/layout/navigation/Sidebar.vue";
 
 export default {
   name: "OverviewDetails",
@@ -105,6 +116,7 @@ export default {
     SmallModal,
     MediumModal,
     NumberInput,
+    Sidebar,
     Btn,
   },
 
@@ -168,4 +180,10 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#overview {
+  .payment-details {
+    width: calc(100% - #{$side-bar-width});
+  }
+}
+</style>

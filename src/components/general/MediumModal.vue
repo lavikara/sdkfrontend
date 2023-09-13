@@ -38,7 +38,7 @@ export default {
 
   .container {
     .card {
-      max-width: 430px;
+      max-width: 530px;
       margin: 7rem auto 0 auto;
 
       .close-btn {
