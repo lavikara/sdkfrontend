@@ -168,11 +168,11 @@ export default {
     setCardExpiryNumber() {},
 
     removeIframe() {
-      console.log(window.location.ancestorOrigins);
+      console.log(location.ancestorOrigins);
       // let elem = document.getElementById("small-modal");
       // elem.parentNode.removeChild(elem);
       // console.log(elem);
-      location.replace(ancestorOrigins[0]);
+      location.replace(location.ancestorOrigins[0]);
     },
 
     reload() {
