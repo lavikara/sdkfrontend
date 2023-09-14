@@ -2,7 +2,6 @@
   <div
     id="small-modal"
     class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-w-full tw-h-screen tw-right-0 tw-z-50"
-    @click="$emit('close')"
   >
     <div class="container tw-m-4">
       <div class="card tw-bg-white tw-rounded-lg tw-py-8 tw-px-6" @click.stop>
