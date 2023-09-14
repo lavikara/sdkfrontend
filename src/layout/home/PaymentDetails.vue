@@ -168,7 +168,7 @@ export default {
     setCardExpiryNumber() {},
 
     removeIframe() {
-      console.log(window);
+      console.log(window.location.ancestorOrigins);
       // let elem = document.getElementById("small-modal");
       // elem.parentNode.removeChild(elem);
       // console.log(elem);
