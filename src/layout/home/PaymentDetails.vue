@@ -172,8 +172,8 @@ export default {
 
     removeIframe() {
       console.log(document);
-      let elem = document.getElementById("woodcore--frame-id");
-      // elem.parentNode.removeChild(elem);
+      let elem = document.getElementById("small-modal");
+      elem.parentNode.removeChild(elem);
       console.log(elem);
     },
 
