@@ -47,7 +47,7 @@
                     alt="info"
                   />
                   <div>
-                    <p>{{ paymentDetails.email }}</p>
+                    <p>{{ payload.email }}</p>
                     <p class="tw-text-blue">
                       Pay {{ formatCurrency(paymentDetails.amount, 2, "NGN") }}
                     </p>
@@ -171,8 +171,9 @@ export default {
     setCardExpiryNumber() {},
 
     removeIframe() {
-      let elem = document.querySelector("#woodcore--frame-id");
-      elem.parentNode.removeChild(elem);
+      let elem = document.querySelector("woodcore--frame-id");
+      // elem.parentNode.removeChild(elem);
+      console.log(elem);
     },
 
     reload() {
