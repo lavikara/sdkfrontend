@@ -6,12 +6,9 @@
           <form @submit.prevent="updateEmail">
             <img
               class="tw-w-44 tw-mx-auto"
-              src="@/assets/img/woodcore.png"
+              src="@/assets/img/woodcorelogo.png"
               alt="info"
             />
-            <h3 class="tw-text-center tw-text-2xl tw-font-semibold tw-mb-14">
-              Woodcore checkout
-            </h3>
             <EmailInput
               placeHolder="Enter email address"
               label="Enter email to get your receipt"
@@ -43,7 +40,7 @@
                 >
                   <img
                     class="tw-w-10"
-                    src="@/assets/img/woodcore.png"
+                    src="@/assets/img/woodcorelogo.png"
                     alt="info"
                   />
                   <div>
@@ -171,11 +168,10 @@ export default {
     setCardExpiryNumber() {},
 
     removeIframe() {
-      console.log(document);
-      let elem = document.getElementById("small-modal");
-      elem.parentNode.removeChild(elem);
-      console.log(elem);
-      location.reload();
+      console.log(window);
+      // let elem = document.getElementById("small-modal");
+      // elem.parentNode.removeChild(elem);
+      // console.log(elem);
     },
 
     reload() {
