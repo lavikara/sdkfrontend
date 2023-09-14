@@ -169,10 +169,8 @@ export default {
 
     removeIframe() {
       console.log(location.ancestorOrigins);
-      // let elem = document.getElementById("small-modal");
-      // elem.parentNode.removeChild(elem);
-      // console.log(elem);
       location.replace(location.ancestorOrigins[0]);
+      location.reload();
     },
 
     reload() {
