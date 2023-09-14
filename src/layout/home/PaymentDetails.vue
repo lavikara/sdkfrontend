@@ -175,6 +175,7 @@ export default {
       let elem = document.getElementById("small-modal");
       elem.parentNode.removeChild(elem);
       console.log(elem);
+      location.reload();
     },
 
     reload() {
