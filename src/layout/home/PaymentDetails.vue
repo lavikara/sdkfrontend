@@ -171,7 +171,7 @@ export default {
     setCardExpiryNumber() {},
 
     removeIframe() {
-      let elem = document.querySelector("woodcore--frame-id");
+      let elem = document.getElementById("woodcore--frame-id");
       // elem.parentNode.removeChild(elem);
       console.log(elem);
     },
